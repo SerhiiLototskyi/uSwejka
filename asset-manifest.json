@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/repository-name/static/css/main.c67ed7f3.css",
+    "main.js": "/repository-name/static/js/main.b2e95627.js",
+    "static/js/787.28cb0dcd.chunk.js": "/repository-name/static/js/787.28cb0dcd.chunk.js",
+    "static/media/szwejk-logo-svg.svg": "/repository-name/static/media/szwejk-logo-svg.9d1b46839159b64846ebc03f79b5a530.svg",
+    "index.html": "/repository-name/index.html",
+    "main.c67ed7f3.css.map": "/repository-name/static/css/main.c67ed7f3.css.map",
+    "main.b2e95627.js.map": "/repository-name/static/js/main.b2e95627.js.map",
+    "787.28cb0dcd.chunk.js.map": "/repository-name/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c67ed7f3.css",
+    "static/js/main.b2e95627.js"
+  ]
+}
