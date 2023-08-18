@@ -1,32 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
 import logo from './img/szwejk-logo-svg.svg';
-import {AddTipsBtn} from "./AddTipsBtn/addTipsBtn";
+import {TipsCount} from "./TipsCount/TipsCount";
+import {MonthCount} from "./MonthCount/MonthCount";
+import {Route, Routes} from "react-router-dom";
+import {Menu} from "./Select/Select/Menu";
+import {PayrollCounter} from "./PayrollCounter/PayrollCounter";
 
 function App() {
 
-    const [AllDayTips, AddTips] = useState(Number(localStorage.getItem('allDayTips')))
 
-    const clearTips = () => {
-        AddTips(0)
-        localStorage.setItem('allDayTips', (0).toString())
-
-    }
     return (
         <div className="App">
-            <img src={logo} alt=""/>
-            <div className="tipsPanel">
-                <p className="Tips">{AllDayTips}</p>
+            <div className={'header'}>
+                <img src={logo} alt=""/>
+                <Menu/>
             </div>
-            <div className="Buttons">
-                <AddTipsBtn AddTips={AddTips} AllDayTips={AllDayTips} number={5}/>
-                <AddTipsBtn AddTips={AddTips} AllDayTips={AllDayTips} number={10}/>
-                <AddTipsBtn AddTips={AddTips} AllDayTips={AllDayTips} number={20}/>
-                <AddTipsBtn AddTips={AddTips} AllDayTips={AllDayTips} number={30}/>
-                <AddTipsBtn AddTips={AddTips} AllDayTips={AllDayTips} number={40}/>
-                <AddTipsBtn AddTips={AddTips} AllDayTips={AllDayTips} number={50}/>
-                <p className='clear' onClick={() => clearTips()}>x</p>
+            <div className="BodyContainer">
+                <Routes>
+                    <Route path="/tips" element={<TipsCount/>}/>
+                    <Route path="/" element={<PayrollCounter/>}/>
+                </Routes>
+
             </div>
+
         </div>
     );
 }

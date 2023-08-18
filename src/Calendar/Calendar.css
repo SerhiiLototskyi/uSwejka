@@ -1,0 +1,13 @@
+.CalPanel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.Utarg{
+    display: flex;
+    margin: 10px 0px 10px 0px ;
+}
+.infoCounts{
+
+}
