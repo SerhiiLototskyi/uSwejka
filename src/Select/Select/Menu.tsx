@@ -1,6 +1,6 @@
 import React from 'react';
 import {Select, Space} from 'antd';
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 export const Menu = () => {

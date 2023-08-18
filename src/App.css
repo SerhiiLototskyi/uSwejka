@@ -1,18 +1,24 @@
 .App {
 
 }
+
 .header{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
 .BodyContainer{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .Links{
     display: flex;
     flex-direction: column;
 }
+
 .Buttons button {
     margin: 10px 10px 10px 10px;
     background-color: #14c9c9;
