@@ -9,10 +9,12 @@
     margin: 10px 0px 10px 0px ;
 }
 .infoCounts{
-    width: 800px;
     font-size: 30px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .infoUtarg{
     display: flex;

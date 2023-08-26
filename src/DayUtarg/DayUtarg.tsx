@@ -26,7 +26,11 @@ export const DayUtargCount = (props: DayUtarg) => {
 
 
     const [ActiveMode, ChangeActiveMode] = useState(false)
-
+    const OnActiveMode = () => {
+        ChangeActiveMode(true)
+        props.ChangeMonthUtarg(props.MonthUtarg - Number(props.DayDohodCount))
+        localStorage.setItem(props.SelectedMonth, (props.MonthUtarg + Number(props.DayDohodCount)).toString())
+    }
     const ChangeDayUtargHandler = (e: ChangeEvent<HTMLInputElement>) => {
         ChangeActiveMode(false)
         props.ChangeDayUtarg((Number(props.DayDohodCount) / 100 * 5))
@@ -42,7 +46,7 @@ export const DayUtargCount = (props: DayUtarg) => {
         <div className={'DayCount'}>
             {ActiveMode ? <input autoFocus={true} onBlur={ChangeDayUtargHandler} onChange={ChangeDayCountHandler}
                                  type={"number"}/> :
-                <span onDoubleClick={() => ChangeActiveMode(true)}>{props.DayDohodCount}</span>}
+                <span onDoubleClick={OnActiveMode}>{props.DayDohodCount}</span>}
 
         </div>
     );

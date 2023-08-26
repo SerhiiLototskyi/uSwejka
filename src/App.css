@@ -1,11 +1,15 @@
 .App {
 
 }
-
+.logo{
+    max-width: 100%;
+    height: auto;
+}
 .header{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .BodyContainer{

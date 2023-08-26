@@ -14,10 +14,11 @@ function App() {
     return (
         <div className="App">
             <div className={'header'}>
-                <img src={logo} alt=""/>
+                <img className={'logo'} src={logo}  alt=""/>
                 <Menu/>
             </div>
             <div className="BodyContainer">
+
                 <Routes>
                     <Route path="/tips" element={<TipsCount/>}/>
                     <Route path="/" element={<PayrollCounter/>}/>
