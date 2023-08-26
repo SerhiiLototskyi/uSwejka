@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import './App.css';
 import logo from './img/szwejk-logo-svg.svg';
 import {TipsCount} from "./TipsCount/TipsCount";
-import {MonthCount} from "./MonthCount/MonthCount";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import {Menu} from "./Select/Select/Menu";
 import {PayrollCounter} from "./PayrollCounter/PayrollCounter";
