@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/uSwejka/static/css/main.044b89b1.css",
-    "main.js": "/uSwejka/static/js/main.128d4c7e.js",
+    "main.css": "/uSwejka/static/css/main.ff54b8d3.css",
+    "main.js": "/uSwejka/static/js/main.b6dda76a.js",
     "static/js/787.b4a61835.chunk.js": "/uSwejka/static/js/787.b4a61835.chunk.js",
     "static/media/szwejk-logo-svg.svg": "/uSwejka/static/media/szwejk-logo-svg.9d1b46839159b64846ebc03f79b5a530.svg",
     "index.html": "/uSwejka/index.html",
-    "main.044b89b1.css.map": "/uSwejka/static/css/main.044b89b1.css.map",
-    "main.128d4c7e.js.map": "/uSwejka/static/js/main.128d4c7e.js.map",
+    "main.ff54b8d3.css.map": "/uSwejka/static/css/main.ff54b8d3.css.map",
+    "main.b6dda76a.js.map": "/uSwejka/static/js/main.b6dda76a.js.map",
     "787.b4a61835.chunk.js.map": "/uSwejka/static/js/787.b4a61835.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.044b89b1.css",
-    "static/js/main.128d4c7e.js"
+    "static/css/main.ff54b8d3.css",
+    "static/js/main.b6dda76a.js"
   ]
 }
