@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/uSwejka/pages/index.html/static/css/main.ff54b8d3.css",
-    "main.js": "/uSwejka/pages/index.html/static/js/main.0113e187.js",
-    "static/js/787.b4a61835.chunk.js": "/uSwejka/pages/index.html/static/js/787.b4a61835.chunk.js",
-    "static/media/szwejk-logo-svg.svg": "/uSwejka/pages/index.html/static/media/szwejk-logo-svg.9d1b46839159b64846ebc03f79b5a530.svg",
-    "index.html": "/uSwejka/pages/index.html/index.html",
-    "main.ff54b8d3.css.map": "/uSwejka/pages/index.html/static/css/main.ff54b8d3.css.map",
-    "main.0113e187.js.map": "/uSwejka/pages/index.html/static/js/main.0113e187.js.map",
-    "787.b4a61835.chunk.js.map": "/uSwejka/pages/index.html/static/js/787.b4a61835.chunk.js.map"
+    "main.css": "/uSwejka/static/css/main.ff54b8d3.css",
+    "main.js": "/uSwejka/static/js/main.28b632bf.js",
+    "static/js/787.b4a61835.chunk.js": "/uSwejka/static/js/787.b4a61835.chunk.js",
+    "static/media/szwejk-logo-svg.svg": "/uSwejka/static/media/szwejk-logo-svg.9d1b46839159b64846ebc03f79b5a530.svg",
+    "index.html": "/uSwejka/index.html",
+    "main.ff54b8d3.css.map": "/uSwejka/static/css/main.ff54b8d3.css.map",
+    "main.28b632bf.js.map": "/uSwejka/static/js/main.28b632bf.js.map",
+    "787.b4a61835.chunk.js.map": "/uSwejka/static/js/787.b4a61835.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ff54b8d3.css",
-    "static/js/main.0113e187.js"
+    "static/js/main.28b632bf.js"
   ]
 }
