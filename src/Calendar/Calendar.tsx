@@ -25,11 +25,20 @@ export const CalendarContainer: React.FC = () => {
     };
     const [ActiveMode, ChangeActiveMode] = useState(false)
     const [DayTips, ChangeDayTips] = useState(0)
+    const [MonthTips, ChangeMonthTips] = useState(0)
     const [DayUtarg, ChangeDayUtarg] = useState(0)
     const [SelectedDay, ChangeSelectedDay] = useState('')
     const [SelectedMonth, ChangeSelectedMonth] = useState('')
     const [DayDohodCount, ChangeDayDohodCount] = useState<string>('0')
     const [MonthUtarg, ChangeMonthUtarg] = useState(0)
+
+    const OnActiveMode = () => {
+        ChangeActiveMode(true)
+        ChangeMonthTips(MonthTips - DayTips)
+
+        localStorage.setItem(SelectedMonth + 'tips', (Number(localStorage.getItem(SelectedMonth + 'tips')) - DayTips).toString())
+    }
+
     const onSelectHandler = (value: Dayjs) => {
         ChangeSelectedDay(value.format('DD-MM-YYYY'))
         ChangeSelectedMonth(value.format('MM-YYYY'))
@@ -40,6 +49,7 @@ export const CalendarContainer: React.FC = () => {
     }
     const ChangeDayTipsBlurHandler = () => {
         ChangeActiveMode(false)
+        ChangeMonthTips(MonthTips + DayTips)
         localStorage.setItem(SelectedDay + 'tips', DayTips.toString())
         localStorage.setItem(SelectedMonth + 'tips', (Number(localStorage.getItem(SelectedMonth + 'tips')) + DayTips).toString())
     }
@@ -48,6 +58,9 @@ export const CalendarContainer: React.FC = () => {
     }, [SelectedDay])
     useEffect(() => {
         ChangeMonthUtarg(Number(localStorage.getItem(SelectedMonth)))
+    }, [SelectedMonth])
+    useEffect(() => {
+        ChangeMonthTips(Number(localStorage.getItem(SelectedMonth + 'tips')))
     }, [SelectedMonth])
     return (
         <div className={'CalPanel'}>
@@ -64,12 +77,12 @@ export const CalendarContainer: React.FC = () => {
                                                                   MonthUtarg={MonthUtarg}
                                                                   DayUtarg={DayUtarg}
                                                                   ChangeDayUtarg={ChangeDayUtarg}/></div>
-                    <div className={'Utarg'}>Заробітокза з утаргу:{DayUtarg}</div>
+                    <div className={'Utarg'}>Заробіток з утаргу:{DayUtarg}</div>
                     <div className={'Utarg'}>Чайові: {<div className={'DayCount'}>
                         {ActiveMode ?
                             <input autoFocus={true} onBlur={ChangeDayTipsBlurHandler} onChange={ChangeDayTipsHandler}
                                    type={"number"}/> :
-                            <span onDoubleClick={() => ChangeActiveMode(true)}>{DayTips}</span>}
+                            <span onDoubleClick={OnActiveMode}>{DayTips}</span>}
 
                     </div>}</div>
                 </div>
@@ -81,7 +94,7 @@ export const CalendarContainer: React.FC = () => {
                         Дохід з утаргу за місяць:{(MonthUtarg / 100 * 5).toFixed(2)}
                     </div>
                     <div>
-                        Чайові за місяць:{localStorage.getItem(SelectedMonth + 'tips')}
+                        Чайові за місяць:{MonthTips}
                     </div>
                 </div>
             </div>
