@@ -5,6 +5,7 @@ import {TipsCount} from "./TipsCount/TipsCount";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import {Menu} from "./Select/Select/Menu";
 import {PayrollCounter} from "./PayrollCounter/PayrollCounter";
+import {Qr} from "./Qr/Qr";
 
 function App() {
     const navigate = useNavigate()
@@ -22,6 +23,7 @@ function App() {
                 <Routes>
                     <Route path="/tips" element={<TipsCount/>}/>
                     <Route path="/" element={<PayrollCounter/>}/>
+                    <Route path="/share" element={<Qr/>}/>
                 </Routes>
 
             </div>

@@ -1,17 +1,17 @@
 import type {Dayjs} from 'dayjs';
 import dayjs from 'dayjs';
 import React, {ChangeEvent, useEffect, useState} from 'react';
-import type {CalendarProps} from 'antd';
-import {Calendar, theme} from 'antd';
+import type {CalendarProps, RadioChangeEvent} from 'antd';
+import {Calendar, ConfigProvider, theme} from 'antd';
 import './Calendar.css';
 import {DayUtargCount} from "../DayUtarg/DayUtarg";
-import 'dayjs/locale/zh-cn';
 
 const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
 
 };
 
 export const CalendarContainer: React.FC = () => {
+
     useEffect(() => {
         ChangeSelectedDay(dayjs().format('DD-MM-YYYY'))
         ChangeDayTips(Number(localStorage.getItem(dayjs().format('DD-MM-YYYY') + 'tips')))
@@ -63,10 +63,12 @@ export const CalendarContainer: React.FC = () => {
         ChangeMonthTips(Number(localStorage.getItem(SelectedMonth + 'tips')))
     }, [SelectedMonth])
     return (
+
         <div className={'CalPanel'}>
             <div style={wrapperStyle}>
                 <Calendar fullscreen={false} onSelect={onSelectHandler} onPanelChange={onPanelChange}/>
             </div>
+
             <div className={'infoCounts'}>
                 <div>
                     <div className={'Utarg'}>Утарг:<DayUtargCount ChangeDayDohodCount={ChangeDayDohodCount}
@@ -82,7 +84,7 @@ export const CalendarContainer: React.FC = () => {
                         {ActiveMode ?
                             <input autoFocus={true} onBlur={ChangeDayTipsBlurHandler} onChange={ChangeDayTipsHandler}
                                    type={"number"}/> :
-                            <span onDoubleClick={OnActiveMode}>{DayTips}</span>}
+                            <span onClick={OnActiveMode}>{DayTips}</span>}
 
                     </div>}</div>
                 </div>
@@ -99,6 +101,7 @@ export const CalendarContainer: React.FC = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

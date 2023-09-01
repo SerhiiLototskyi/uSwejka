@@ -17,6 +17,7 @@ export const Menu = () => {
                 options={[
                     {value: '', label: 'Cash'},
                     {value: 'tips', label: 'Tips'},
+                    {value: 'share', label: 'Share'},
                 ]}
             />
         </Space>

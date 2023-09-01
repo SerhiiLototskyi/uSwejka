@@ -46,7 +46,7 @@ export const DayUtargCount = (props: DayUtarg) => {
         <div className={'DayCount'}>
             {ActiveMode ? <input autoFocus={true} onBlur={ChangeDayUtargHandler} onChange={ChangeDayCountHandler}
                                  type={"number"}/> :
-                <span onDoubleClick={OnActiveMode}>{props.DayDohodCount}</span>}
+                <span onClick={OnActiveMode}>{props.DayDohodCount}</span>}
 
         </div>
     );
