@@ -1,5 +1,7 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import './DayUtarg.css';
+import {EditOutlined} from "@ant-design/icons";
+import Input from "antd/es/input/Input";
 
 type DayUtarg = {
     ChangeDayUtarg: (count: number) => void
@@ -44,10 +46,17 @@ export const DayUtargCount = (props: DayUtarg) => {
 
     return (
         <div className={'DayCount'}>
-            {ActiveMode ? <input autoFocus={true} onBlur={ChangeDayUtargHandler} onChange={ChangeDayCountHandler}
-                                 type={"number"}/> :
-                <span onClick={OnActiveMode}>{props.DayDohodCount}</span>}
-
+            {ActiveMode ?
+                <Input className='input'
+                    autoFocus={true}
+                    onChange={ChangeDayCountHandler}
+                    onBlur={ChangeDayUtargHandler}
+                    placeholder="Zapisz utarg"
+                    maxLength={5}
+                />
+                :
+                <span >{props.DayDohodCount}</span>}
+            <EditOutlined style={{  fontSize: '35px', paddingLeft: '40px' }} onClick={OnActiveMode} />
         </div>
     );
 };

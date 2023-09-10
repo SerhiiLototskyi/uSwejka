@@ -1,15 +1,26 @@
 .App {
-
+    font-family: 'Archivo', sans-serif;
 }
+.bg{
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
 .logo{
     max-width: 100%;
-    height: auto;
 }
 .header{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 10px;
 }
 
 .BodyContainer{
