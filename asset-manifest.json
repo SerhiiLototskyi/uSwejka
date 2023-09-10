@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/uSwejka/static/css/main.b6a0468c.css",
-    "main.js": "/uSwejka/static/js/main.137071e0.js",
-    "static/js/787.28cb0dcd.chunk.js": "/uSwejka/static/js/787.28cb0dcd.chunk.js",
-    "static/media/bgsw.jpg": "/uSwejka/static/media/bgsw.9688fc42e5a4c894a85a.jpg",
-    "static/media/u-szwejka.png": "/uSwejka/static/media/u-szwejka.af7bb9025ee1734e9cc0.png",
-    "index.html": "/uSwejka/index.html",
-    "main.b6a0468c.css.map": "/uSwejka/static/css/main.b6a0468c.css.map",
-    "main.137071e0.js.map": "/uSwejka/static/js/main.137071e0.js.map",
-    "787.28cb0dcd.chunk.js.map": "/uSwejka/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/static/css/main.d03aef7e.css",
+    "main.js": "/static/js/main.01fe06b0.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "static/media/bgsw.jpg": "/static/media/bgsw.9688fc42e5a4c894a85a.jpg",
+    "static/media/u-szwejka.png": "/static/media/u-szwejka.af7bb9025ee1734e9cc0.png",
+    "index.html": "/index.html",
+    "main.d03aef7e.css.map": "/static/css/main.d03aef7e.css.map",
+    "main.01fe06b0.js.map": "/static/js/main.01fe06b0.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6a0468c.css",
-    "static/js/main.137071e0.js"
+    "static/css/main.d03aef7e.css",
+    "static/js/main.01fe06b0.js"
   ]
 }
