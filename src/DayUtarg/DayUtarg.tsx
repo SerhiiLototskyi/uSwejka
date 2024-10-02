@@ -19,7 +19,7 @@ export const DayUtargCount = (props: DayUtarg) => {
         let count = localStorage.getItem(props.SelectedDay)
         if (count) {
             props.ChangeDayDohodCount(count)
-            props.ChangeDayUtarg((Number(count) / 100 * 5))
+            props.ChangeDayUtarg((Number(count) / 100 * 6))
         } else {
             props.ChangeDayDohodCount('0')
             props.ChangeDayUtarg(0)
@@ -33,9 +33,9 @@ export const DayUtargCount = (props: DayUtarg) => {
         props.ChangeMonthUtarg(props.MonthUtarg - Number(props.DayDohodCount))
         localStorage.setItem(props.SelectedMonth, (props.MonthUtarg + Number(props.DayDohodCount)).toString())
     }
-    const ChangeDayUtargHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const ChangeDayUtargHandler = () => {
         ChangeActiveMode(false)
-        props.ChangeDayUtarg((Number(props.DayDohodCount) / 100 * 5))
+        props.ChangeDayUtarg((Number(props.DayDohodCount) / 100 * 6))
         localStorage.setItem(props.SelectedDay, props.DayDohodCount)
         props.ChangeMonthUtarg(props.MonthUtarg + Number(props.DayDohodCount))
         localStorage.setItem(props.SelectedMonth, (props.MonthUtarg + Number(props.DayDohodCount)).toString())
@@ -43,20 +43,26 @@ export const DayUtargCount = (props: DayUtarg) => {
     const ChangeDayCountHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.ChangeDayDohodCount(e.currentTarget.value)
     }
-
+    // @ts-ignore
+    const onKeyPress = (e: KeyboardEventHandler<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            ChangeDayUtargHandler()
+        }
+    }
     return (
         <div className={'DayCount'}>
             {ActiveMode ?
                 <Input className='input'
-                    autoFocus={true}
-                    onChange={ChangeDayCountHandler}
-                    onBlur={ChangeDayUtargHandler}
-                    placeholder="Zapisz utarg"
-                    maxLength={5}
+                       autoFocus={true}
+                       onChange={ChangeDayCountHandler}
+                       onBlur={ChangeDayUtargHandler}
+                       placeholder="Zapisz utarg"
+                       maxLength={5}
+                       onKeyPress={onKeyPress}
                 />
                 :
-                <span >{props.DayDohodCount}</span>}
-            <EditOutlined style={{  fontSize: '35px', paddingLeft: '40px' }} onClick={OnActiveMode} />
+                <span>{props.DayDohodCount}</span>}
+            <EditOutlined style={{fontSize: '35px', paddingLeft: '40px'}} onClick={OnActiveMode}/>
         </div>
     );
 };

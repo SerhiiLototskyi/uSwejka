@@ -6,7 +6,7 @@ import {Route, Routes, useNavigate} from "react-router-dom";
 import {Menu} from "./Select/Select/Menu";
 import {PayrollCounter} from "./PayrollCounter/PayrollCounter";
 import {Qr} from "./Qr/Qr";
-import background from "./img/bgsw.jpg";
+import background from "./img/black.jpg";
 
 function App() {
     const navigate = useNavigate()

@@ -1,12 +1,14 @@
 import type {Dayjs} from 'dayjs';
 import dayjs from 'dayjs';
 import React, {ChangeEvent, useEffect, useState} from 'react';
-import type {CalendarProps, RadioChangeEvent} from 'antd';
+import type {CalendarProps} from 'antd';
 import {Calendar, ConfigProvider, theme} from 'antd';
 import './Calendar.css';
 import {DayUtargCount} from "../DayUtarg/DayUtarg";
-import { EditOutlined } from '@ant-design/icons';
+import {EditOutlined} from '@ant-design/icons';
 import Input from 'antd/es/input/Input';
+import plPL from 'antd/locale/pl_PL';
+import {DropdownButton} from "../Dropdown/Dropdown";
 
 const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
 
@@ -65,6 +67,11 @@ export const CalendarContainer: React.FC = () => {
         ChangeMonthTips(Number(localStorage.getItem(SelectedMonth + 'tips')))
     }, [SelectedMonth])
      // @ts-ignore
+    const onKeyPress = (e: KeyboardEventHandler<HTMLInputElement>) => {
+        if(e.key === "Enter"){
+            ChangeDayTipsBlurHandler()
+        }
+    }
 
     return (
        <div className={'CalPanel'}>
@@ -81,14 +88,16 @@ export const CalendarContainer: React.FC = () => {
                         },
                     }}
                 >
-                    <Calendar   fullscreen={false} onSelect={onSelectHandler} onPanelChange={onPanelChange}/>
+                    <ConfigProvider locale={plPL}>
+                    <Calendar fullscreen={false} onSelect={onSelectHandler} onPanelChange={onPanelChange}/>
+                    </ConfigProvider>
                 </ConfigProvider>
 
             </div>
 
             <div className={'infoCounts'}>
                 <div>
-                    <div className={'Utarg'}>Utarg:<DayUtargCount ChangeDayDohodCount={ChangeDayDohodCount}
+                    <div className={'Utarg'}>Utarg - <DayUtargCount ChangeDayDohodCount={ChangeDayDohodCount}
                                                                   DayDohodCount={DayDohodCount}
                                                                   SelectedMonth={SelectedMonth}
                                                                   SelectedDay={SelectedDay}
@@ -96,16 +105,16 @@ export const CalendarContainer: React.FC = () => {
                                                                   MonthUtarg={MonthUtarg}
                                                                   DayUtarg={DayUtarg}
                                                                   ChangeDayUtarg={ChangeDayUtarg}/>
-
                     </div>
-                    <div className={'Utarg'}>Zarobki z utargu: {DayUtarg}</div>
-                    <div className={'Utarg'}>Napiwek:  {<div className={'DayCount'}>
+                    <div className={'Utarg'}>Zarobki z utargu - {DayUtarg}</div>
+                    <div className={'Utarg'}>Napiwek -  {<div className={'DayCount'}>
                         {ActiveMode ?
                             <Input
                                 className='input-napiwek'
                                 autoFocus={true}
                                 onChange={ChangeDayTipsHandler}
                                 onBlur={ChangeDayTipsBlurHandler}
+                                onKeyPress={onKeyPress}
                                 placeholder="Zapisz napiwek"
                                 maxLength={3}
                             />
@@ -119,13 +128,13 @@ export const CalendarContainer: React.FC = () => {
                 </div>
                 <div>
                     <div>
-                        Utarg za miesiąc: {MonthUtarg}
+                        Utarg za miesiąc - {MonthUtarg}
                     </div>
                     <div>
-                        Zarobki za miesiąc: {(MonthUtarg / 100 * 5).toFixed(2)}
+                        Zarobki za miesiąc - {(MonthUtarg / 100 * 6).toFixed(2)}
                     </div>
                     <div>
-                        Napiwek za miesiąc: {MonthTips}
+                        Napiwek za miesiąc - {MonthTips}
                     </div>
                 </div>
             </div>
