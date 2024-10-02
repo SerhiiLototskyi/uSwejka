@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/uSwejka/static/css/main.d03aef7e.css",
-    "main.js": "/uSwejka/static/js/main.031ec31d.js",
+    "main.js": "/uSwejka/static/js/main.6d1f072b.js",
     "static/js/787.28cb0dcd.chunk.js": "/uSwejka/static/js/787.28cb0dcd.chunk.js",
     "static/media/black.jpg": "/uSwejka/static/media/black.df962674c329e164f5f8.jpg",
     "static/media/u-szwejka.png": "/uSwejka/static/media/u-szwejka.af7bb9025ee1734e9cc0.png",
     "index.html": "/uSwejka/index.html",
     "main.d03aef7e.css.map": "/uSwejka/static/css/main.d03aef7e.css.map",
-    "main.031ec31d.js.map": "/uSwejka/static/js/main.031ec31d.js.map",
+    "main.6d1f072b.js.map": "/uSwejka/static/js/main.6d1f072b.js.map",
     "787.28cb0dcd.chunk.js.map": "/uSwejka/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d03aef7e.css",
-    "static/js/main.031ec31d.js"
+    "static/js/main.6d1f072b.js"
   ]
 }
